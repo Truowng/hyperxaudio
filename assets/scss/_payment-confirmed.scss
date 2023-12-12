@@ -1,0 +1,63 @@
+// START PAYMENT CONFIRM
+#fhm-payment-confirmed {
+  padding: 223px 0;
+  background-color: $white;
+  position: relative;
+  > .image {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    z-index: 0;
+    height: 100%;
+    width: 100%;
+    max-width: 650px;
+  }
+  .payment-confirmed {
+    @include flex(center, center, unset);
+    flex-direction: column;
+    position: relative;
+    z-index: 2;
+    .sub {
+      font-size: 16px;
+      margin-bottom: 56px;
+      text-align: center;
+    }
+    .icon {
+      width: 130px;
+      aspect-ratio: 1;
+      margin-bottom: 53px;
+    }
+    .title {
+      font-size: 30px;
+      font-weight: $fw-sb;
+      margin-bottom: 53px;
+      text-align: center;
+    }
+    .button-track-order {
+      width: 100%;
+      max-width: 540px;
+      border-radius: 0;
+      justify-content: center;
+      margin-bottom: 36px;
+    }
+    .button-back {
+      text-decoration-color: $red;
+      text-decoration: underline;
+      color: $red;
+      font-size: 16px;
+      margin: 0 auto;
+    }
+  }
+}
+// END PAYMENT CONFIRM
+
+// START REPSONSIVE
+@include desktop {
+  #fhm-payment-confirmed {
+    .image {
+      display: none;
+    }
+  }
+}
+// END REPSONSIVE

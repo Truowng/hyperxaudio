@@ -1,0 +1,226 @@
+// START BANNER
+#fhm-blog-single-banner {
+  background-image: url(../images/background/blog-single-banner.jpg);
+  padding-top: 225px;
+  margin-top: -90px;
+}
+// END BANNER
+
+// START BLOG SINGLE
+#fhm-blog-single {
+  padding: 111px 0 138px;
+  background-color: #37383a;
+  .blogs-main {
+    .image {
+      width: 100%;
+      margin-bottom: 30px;
+    }
+    > .title {
+      font-size: 32px;
+      line-height: 38px;
+      color: $white;
+      font-family: $font-helv;
+      text-transform: capitalize;
+      margin-bottom: 20px;
+    }
+    .share-info {
+      @include flex(space-between, center, unset);
+
+      .info-container {
+        @include flex(unset, center, 20px);
+        .info {
+          @include flex(unset, center, 8px);
+          .icon {
+            width: 20px;
+            aspect-ratio: 1;
+          }
+          .text {
+            font-size: 14px;
+            line-height: 17px;
+            color: $white;
+            font-family: $font-helv-r;
+          }
+        }
+      }
+      .share-container {
+        @include flex(unset, center, 5px);
+        .item {
+          a {
+            @include flex(unset, center, 4px);
+            padding: 5px 8px;
+            border-radius: 2px;
+            background-color: $yellow-2;
+            .icon {
+              width: 9px;
+              height: 9px;
+              @include flex(center, center, unset);
+            }
+            .text {
+              font-size: 10px;
+              line-height: 12px;
+              font-family: $font-helv-r;
+            }
+          }
+        }
+      }
+    }
+    .content {
+      margin-top: 30px;
+      p {
+        font-size: 16px;
+        line-height: 24px;
+        font-family: $font-helv-r;
+        color: $white;
+        margin-bottom: 30px;
+        letter-spacing: 0.04em;
+      }
+    }
+    .tag {
+      font-size: 14px;
+      line-height: 17px;
+      font-family: $font-helv;
+      color: $white;
+      text-transform: capitalize;
+      letter-spacing: 0.04em;
+      i {
+        font-family: $font-helv-r;
+      }
+    }
+    .comment-container {
+      margin-top: 80px;
+      .total-comment {
+        font-size: 20px;
+        line-height: 28px;
+        color: $white;
+        font-family: $font-helv-r;
+        letter-spacing: 0.04em;
+        border-bottom: 1px solid $white;
+        padding-bottom: 20px;
+        margin-bottom: 40px;
+      }
+      .list {
+        .comment {
+          @include flex(unset, start, 11px);
+          margin-bottom: 40px;
+          .image {
+            width: 47px;
+            min-width: 47px;
+            height: 44px;
+            border-radius: 3px;
+            overflow: hidden;
+            img {
+              height: 100%;
+              object-fit: cover;
+            }
+          }
+          .content {
+            margin-top: 0;
+            .heading {
+              @include flex(space-between, start, unset);
+              margin-bottom: 4px;
+              .name-date {
+                .name {
+                  font-size: 16px;
+                  line-height: 24px;
+                  font-family: $font-helv;
+                  color: $white;
+                }
+                .date {
+                  font-size: 14px;
+                  line-height: 20px;
+                  color: $white;
+                  font-family: $font-helv-r;
+                  letter-spacing: 0.04em;
+                }
+              }
+              .reply-button {
+                text-transform: uppercase;
+                font-size: 14px;
+                line-height: 24px;
+                color: $white;
+                font-family: $font-helv;
+                border-bottom: 1px solid $white;
+                letter-spacing: 0.04em;
+              }
+            }
+            .text {
+              padding-bottom: 20px;
+              border-bottom: 1px solid $white;
+            }
+          }
+        }
+      }
+    }
+
+    .reply-container {
+      .title {
+        font-size: 28px;
+        line-height: 34px;
+        color: $white;
+        font-family: $font-helv;
+        margin-bottom: 14px;
+      }
+      .desc {
+        font-size: 16px;
+        line-height: 19px;
+        color: $white;
+        font-family: $font-helv-r;
+        letter-spacing: 0.04em;
+      }
+      .reply-form {
+        margin-top: 25px;
+        .input-wrapper {
+          @include flex(unset, center, 12px);
+        }
+        input,
+        textarea {
+          padding: 15px;
+          border-radius: 2px;
+          border: 1px solid rgba($color: $white, $alpha: 0.8);
+          outline: none;
+          font-size: 16px;
+          line-height: 24px;
+          font-family: $font-helv-r;
+          background-color: transparent;
+          color: $white;
+          flex: 1;
+          margin-bottom: 16px;
+          resize: none;
+          width: 100%;
+        }
+        .button {
+          font-size: 14px;
+          line-height: 24px;
+          border-radius: 0;
+          outline: none;
+          border: none;
+          background-color: $yellow-2;
+          margin-top: 20px;
+          &:hover {
+            background-color: $yellow;
+          }
+        }
+      }
+    }
+  }
+}
+// END BLOG SINGLE
+
+// START RESPONSIVE
+@include landscape-phone {
+  #fhm-blog-single {
+    .blogs-main {
+      > .title {
+        text-align: center;
+        font-size: 24px;
+        line-height: 30px;
+      }
+      .share-info {
+        flex-direction: column;
+        gap: 20px;
+      }
+    }
+  }
+}
+
+// EMD RESPONSIVE

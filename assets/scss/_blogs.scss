@@ -1,0 +1,109 @@
+// START BANNER
+#fhm-blogs-banner {
+  background-image: url(../images/background/blog-banner.jpg);
+  padding-top: 225px;
+  margin-top: -90px;
+}
+// END BANNER
+
+// START BLOG
+#fhm-blogs {
+  background-color: #37383a;
+  padding-top: 100px;
+
+  .blogs-main {
+    max-width: 747px;
+    width: 100%;
+    .blogs-list {
+      margin-bottom: 50px;
+    }
+    .blogs-post {
+      margin-bottom: 54px;
+      &:last-child {
+        margin-bottom: 0;
+      }
+      .image {
+        width: 100%;
+        aspect-ratio: 747/470;
+        margin-bottom: 20px;
+        img {
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+      .content {
+        margin-bottom: 20px;
+        .title {
+          font-size: 20px;
+          line-height: 30px;
+          color: $white;
+          font-family: $font-helv;
+          margin-bottom: 12px;
+          display: -webkit-box;
+          -webkit-box-orient: vertical;
+          -webkit-line-clamp: 1;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+
+        .desc {
+          color: $white;
+          font-family: $font-helv-r;
+          font-size: 16px;
+          line-height: 30px;
+        }
+      }
+
+      .button {
+        color: $white;
+        font-size: 16px;
+        line-height: 30px;
+        font-family: $font-helv;
+        padding: 0;
+        border-bottom: 1px solid $white;
+        border-radius: 0;
+        gap: 7px;
+        img {
+          &:nth-child(2) {
+            display: none;
+          }
+        }
+        &:hover {
+          color: $red;
+          border-color: $red;
+          img {
+            &:nth-child(1) {
+              display: none;
+            }
+            &:nth-child(2) {
+              display: block;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+// END BLOG
+// START RELATE
+#fhm-blogs-relate {
+  padding: 94px 0 170px;
+  background-color: #37383a;
+  .container {
+    > .title {
+      text-transform: capitalize;
+      font-size: 24px;
+      font-family: $font-helv;
+      margin-bottom: 75px;
+      color: $white;
+    }
+  }
+
+  .news-group {
+    max-width: 747px;
+  }
+}
+// END RELATE

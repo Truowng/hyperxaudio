@@ -1,0 +1,32 @@
+// START BANNER
+#fhm-products-list-banner {
+  background-image: url(../images/background/products-list-banner.jpg);
+  padding-top: 225px;
+  margin-top: -90px;
+}
+// END BANNER
+
+// START FEATURE
+#fhm-products-list-feature {
+  .feature-wrapper {
+  }
+  .feature-content {
+    .container {
+      position: relative;
+    }
+    .slider-button-next {
+      right: -35px;
+    }
+  }
+}
+// END FEATURE
+
+// START FAVORITE
+#fhm-products-list-favorite {
+  padding: 90px 0 160px;
+  background-color: #4b4c4d;
+}
+// END FAVORITE
+
+// START RESPONSIVE
+// END RESPONSIVE

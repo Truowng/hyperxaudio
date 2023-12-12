@@ -1,0 +1,256 @@
+// START BANNER
+#fhm-about-banner {
+  background-image: url(../images/background/about-banner.jpg);
+}
+// END BANNER
+
+// START US
+#fhm-about-us {
+  background-color: $black-2;
+  padding-top: 113px;
+  .us-wrapper {
+    @include flex(space-between, start, 30px);
+  }
+  .us-image {
+    position: relative;
+    width: 100%;
+    max-width: 565px;
+    aspect-ratio: 565/484;
+    @include flex(end, end, unset);
+    img {
+      position: relative;
+      z-index: 1;
+    }
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 90%;
+      background-color: $red;
+      z-index: 0;
+      aspect-ratio: 140/470;
+    }
+  }
+  .us-content {
+    max-width: 531px;
+    width: 100%;
+    .heading-block {
+      .title {
+        margin-bottom: 32px;
+      }
+      .list {
+        margin-top: 15px;
+        list-style: none;
+        .item {
+          font-size: 16px;
+          line-height: 21px;
+          font-family: $font-helv-m2;
+          color: $white;
+          margin-bottom: 16px;
+          letter-spacing: 0.01em;
+        }
+      }
+    }
+  }
+}
+// END US
+
+// START QUALITY
+#fhm-about-quality {
+  background-color: $black-2;
+  .quality-wrapper {
+    padding: 178px 0 144px;
+    @include flex(center, center, 34px);
+    position: relative;
+    &::before {
+      content: "";
+      position: absolute;
+      height: 400px;
+      width: 100%;
+      left: 0;
+      background: linear-gradient(
+          180deg,
+          rgba(55, 56, 58, 0.2) 0%,
+          rgba(255, 255, 255, 0.2) 100%
+        ),
+        #161616;
+      z-index: 0;
+    }
+  }
+  .quality-content {
+    position: relative;
+    z-index: 1;
+    max-width: 504px;
+    .list {
+      .item {
+        @include flex(unset, center, 20px);
+        margin-bottom: 42px;
+        &:last-child {
+          margin-bottom: 0;
+        }
+        .icon {
+          width: 32px;
+          aspect-ratio: 1;
+        }
+
+        .content {
+          .title {
+            font-size: 16px;
+            line-height: 20px;
+            font-family: $font-helv;
+            color: $white;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+          }
+          .desc {
+            font-size: 16px;
+            line-height: 21px;
+            font-family: $font-helv-r;
+            color: $white;
+          }
+        }
+      }
+    }
+  }
+  .quality-image {
+    background-color: $yellow;
+    aspect-ratio: 511/563;
+    max-width: 511px;
+    width: 100%;
+    position: relative;
+    z-index: 1;
+    img {
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+}
+// END QUALITY
+
+// START BREAK
+#fhm-about-break {
+  margin-top: 0;
+  background-image: url(../images/background/break-2.jpg);
+  padding-top: 264px;
+  .heading-block {
+    .title {
+      font-size: 48px;
+      text-transform: capitalize;
+      line-height: 60px;
+    }
+  }
+}
+// END BREAK
+
+// START ABOUT
+#fhm-about {
+  background-color: $red-2;
+  .about-content {
+    .list {
+      margin-left: 24px;
+      margin-top: 18px;
+      .item {
+        @include flex(unset, center, unset);
+        margin-bottom: 5px;
+
+        .icon {
+          width: 30px;
+          aspect-ratio: 1;
+        }
+        .text {
+          text-transform: capitalize;
+          font-size: 16px;
+          line-height: 36px;
+          color: $white;
+        }
+      }
+    }
+  }
+}
+// END ABOUT
+// START ADVANTAGE
+#fhm-about-advantage {
+  .advantage-item {
+    .advantage-item-content {
+      max-width: 73%;
+      .desc {
+        line-height: 24px;
+        color: #333333;
+      }
+    }
+  }
+}
+// END ADVANTAGE
+
+// START RESPONSIVE
+@include tablet {
+  #fhm-about-us {
+    .us-wrapper {
+      flex-direction: column;
+    }
+    .us-content {
+      max-width: unset;
+    }
+  }
+
+  #fhm-about-quality {
+    .quality-wrapper {
+      flex-direction: column-reverse;
+      &::before {
+        bottom: 70px;
+        height: 50%;
+      }
+    }
+  }
+
+  #fhm-about-advantage {
+    .advantage-slider {
+      display: none;
+    }
+    .advantage-item {
+      padding: 0;
+    }
+    .advantage-item-content {
+      padding: 50px 0;
+    }
+  }
+}
+
+@include landscape-phone {
+  #fhm-about-quality {
+    .quality-wrapper {
+      &::before {
+        display: none;
+      }
+    }
+  }
+
+  #fhm-about-break {
+    .heading-block {
+      .title {
+        font-size: 36px;
+        line-height: 47px;
+      }
+    }
+  }
+
+  #fhm-about {
+    .about-content {
+      .list {
+        margin-left: 0;
+      }
+    }
+  }
+}
+
+@include mobile {
+  #fhm-about-advantage {
+    .advantage-item {
+      &:last-child {
+        border-top: 1px solid $gray-2;
+      }
+    }
+  }
+}
+// END RESPONSIVE

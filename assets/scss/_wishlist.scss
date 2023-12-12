@@ -1,0 +1,207 @@
+// START WISHLIST
+#fhm-wishlist {
+  padding: 60px 0 100px;
+  background-color: $white;
+  .wishlist-wrapper {
+  }
+
+  .table-heading {
+    @include flex(space-between, center, 100px);
+    padding: 10px 24px;
+    background-color: $white-2;
+    border-left: 1px solid $gray-2;
+    border-right: 1px solid $gray-2;
+    .product-col,
+    .price-col,
+    .action-col,
+    .status-col {
+      font-size: 12px;
+      line-height: 1.5em;
+      text-transform: uppercase;
+    }
+  }
+
+  .wrapper-col {
+    @include flex(space-between, center, 15px);
+    flex: 1;
+  }
+
+  .product-col {
+    max-width: 526px;
+    flex: 1;
+  }
+
+  .price-col {
+    width: 200px;
+    text-align: center;
+  }
+  .status-col {
+    width: 120px;
+    text-align: center;
+  }
+  .action-col {
+    width: 160px;
+    text-align: center;
+  }
+  .del-col {
+    width: 30px;
+    text-align: center;
+  }
+
+  .table-content {
+    border: 1px solid $gray-2;
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+    padding: 24px;
+    .list {
+      .item {
+        @include flex(space-between, center, 100px);
+        margin-bottom: 16px;
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+    }
+    .product-col {
+      @include flex(unset, center, 16px);
+      .image {
+        min-width: 72px;
+        max-width: 72px;
+        width: 100%;
+        aspect-ratio: 1;
+      }
+      .title {
+        font-size: 14px;
+        line-height: 20px;
+        color: $gray;
+        text-transform: uppercase;
+        border: none;
+        font-family: $font-open;
+        font-weight: $fw-r;
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+    .price-col {
+      .current {
+        font-size: 18px;
+        font-weight: $fw-sb;
+        line-height: normal;
+      }
+      .old {
+        color: $gray;
+        font-size: 14px;
+        font-weight: $fw-r;
+        line-height: normal;
+        text-decoration: line-through;
+      }
+    }
+    .status-col {
+      font-size: 14px;
+      font-weight: $fw-sb;
+      line-height: 20px;
+      text-transform: uppercase;
+      .status {
+        &.in-stock {
+          color: $green;
+        }
+        &.out-stock {
+          color: $red;
+        }
+      }
+    }
+    .action-col {
+      @include flex(center, center, unset);
+      .button {
+        font-family: $font-helv;
+        font-size: 12px;
+        line-height: normal;
+        letter-spacing: 0.48px;
+        text-transform: uppercase;
+        gap: 10px;
+        padding: 12px 20px;
+        outline: none;
+        border: 1px solid $red;
+      }
+    }
+    .del-col {
+      .delete {
+        outline: none;
+        border: none;
+        background-color: transparent;
+        img {
+          transition: all ease 0.5s;
+        }
+        &:hover {
+          img {
+            filter: invert(1);
+          }
+        }
+      }
+    }
+  }
+
+  .title {
+    font-size: 18px;
+    line-height: 24px;
+    font-family: $font-helv;
+    padding: 20px 24px;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    border: 1px solid $gray-2;
+  }
+
+  .pagination-1 {
+    margin-top: 60px;
+  }
+}
+// END WISHLIST
+
+// START REPSONSIVE
+@include tablet {
+  #fhm-wishlist {
+    .table-heading {
+      .price-col,
+      .action-col,
+      .status-col {
+        display: none;
+      }
+    }
+    .table-content {
+      .price-col,
+      .status-col {
+        text-align: left;
+      }
+
+      .list {
+        .item {
+          flex-direction: column;
+          gap: 20px;
+          align-items: start;
+          .wrapper-col {
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+}
+
+@include mobile {
+  #fhm-wishlist {
+    .table-content {
+      .action-col {
+        .button {
+          .text {
+            display: none;
+          }
+        }
+      }
+    }
+    .pagination-1 {
+      justify-content: start;
+    }
+  }
+}
+// END REPSONSIVE

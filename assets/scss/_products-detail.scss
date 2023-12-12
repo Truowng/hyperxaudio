@@ -1,0 +1,365 @@
+// START BANNER
+#fhm-products-detail-banner {
+  background-image: url(../images/background/product-detail-banner.jpg);
+  padding-top: 225px;
+  margin-top: -90px;
+}
+// END BANNER
+
+// START PRODUCT DETAIL
+#fhm-products-detail {
+  padding-top: 86px;
+  background-color: $black-2;
+  .detail-heading {
+    @include flex(space-between, start, 30px);
+    margin-bottom: 40px;
+  }
+  .heading {
+    .title {
+      font-size: 32px;
+      line-height: 39px;
+      font-family: $font-helv;
+      color: $white;
+      margin-bottom: 18px;
+    }
+    .info {
+      @include flex(unset, center, unset);
+      .rating {
+        @include flex(unset, center, 9px);
+        .stars {
+          --percent: calc(var(--rating) / 5 * 100%);
+          &::before {
+            content: "★★★★★";
+            font-size: 25px;
+            background: linear-gradient(
+              90deg,
+              #ffe502 var(--percent),
+              $gray var(--percent)
+            );
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+          }
+        }
+        .text {
+          font-size: 14px;
+          line-height: 17px;
+          color: $white;
+          font-family: $font-helv-r;
+        }
+      }
+      .sku {
+        font-size: 14px;
+        line-height: 17px;
+        color: $white;
+        font-family: $font-helv-r;
+        margin-left: 20px;
+        padding-left: 20px;
+        border-left: 1px solid $white;
+      }
+    }
+  }
+  .socials {
+    @include flex(unset, center, 20px);
+    padding: 13px 25px;
+    border: 1px solid $white;
+    border-radius: 4px;
+    .social {
+      width: 16px;
+      aspect-ratio: 1;
+    }
+  }
+
+  .detail-image {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-gap: 27px;
+    .image {
+      width: 100%;
+      img {
+        height: 100%;
+        object-fit: cover;
+      }
+      &:nth-child(1) {
+        grid-area: 1/1/3/4;
+      }
+      &:nth-child(2) {
+        grid-area: 1/4/2/6;
+      }
+      &:nth-child(3) {
+        grid-area: 2/4/3/6;
+      }
+    }
+  }
+
+  .detail-info {
+    margin-top: 60px;
+    .info-wrapper {
+      @include flex(space-between, start, 27px);
+    }
+    .info-desc {
+      .tab-list {
+        @include flex(unset, center, 40px);
+        border-bottom: 1px solid $white;
+        .tab-item {
+          font-size: 18px;
+          line-height: 28px;
+          font-family: $font-helv-m2;
+          color: $white;
+          text-transform: uppercase;
+          background-color: transparent;
+          padding: 10px;
+          outline: none;
+          border: none;
+          transition: all ease 0.5s;
+          border-bottom: 3px solid transparent;
+          &.active {
+            border-bottom: 3px solid $white;
+            font-family: $font-helv;
+          }
+        }
+      }
+
+      .tab-content {
+        margin-top: 34px;
+        p {
+          font-size: 16px;
+          line-height: 24px;
+          font-family: $font-helv-r;
+          color: $white;
+          margin-bottom: 30px;
+        }
+      }
+    }
+    .info-box {
+      padding: 35px;
+      border: 1px solid $white;
+      .desc {
+        font-size: 16px;
+        line-height: 24px;
+        color: $white;
+        font-family: $font-helv-r;
+        margin-bottom: 32px;
+      }
+      .color {
+        margin-bottom: 32px;
+        .title {
+          margin-bottom: 12px;
+          font-size: 16px;
+          line-height: 21px;
+          font-family: $font-helv-r;
+          color: $white;
+        }
+        .list {
+          @include flex(unset, center, 12px);
+          .item {
+            label {
+              input {
+                display: none;
+              }
+              input:checked ~ .checkmark {
+                &::before {
+                  opacity: 1;
+                }
+              }
+              .checkmark {
+                display: block;
+                width: 20px;
+                aspect-ratio: 1;
+                border-radius: 500px;
+                background-color: var(--bg);
+                cursor: pointer;
+                transition: all ease 0.5s;
+                position: relative;
+                &:hover {
+                  transform: scale(0.8);
+                }
+                &::before {
+                  content: "";
+                  position: absolute;
+                  border-radius: 500px;
+                  border: 1px solid var(--bg);
+                  width: 30px;
+                  aspect-ratio: 1;
+                  top: 50%;
+                  left: 50%;
+                  transform: translate(-50%, -50%);
+                  opacity: 0;
+                  transition: all ease 0.5s;
+                }
+              }
+            }
+          }
+        }
+      }
+
+      .price {
+        @include flex(unset, end, 8px);
+        margin-bottom: 32px;
+        .current {
+          font-size: 20px;
+          line-height: 26px;
+          color: $red;
+          font-family: $font-helv-m2;
+        }
+        .old {
+          font-size: 16px;
+          line-height: 21px;
+          color: $white;
+          font-family: $font-helv-r;
+          text-decoration: line-through;
+        }
+      }
+      .button {
+        background-color: $yellow;
+        letter-spacing: 0;
+        border-radius: 0;
+        text-transform: capitalize;
+        &:hover {
+          background-color: $yellow-2;
+        }
+      }
+    }
+  }
+}
+// END PRODUCT DETAIL
+
+// START PROMO
+#fhm-products-detail-promo {
+  padding: 95px 0;
+  background-color: $black-2;
+  .promo-wrapper {
+    padding: 114px 78px;
+    background: url(../images/background/promo-bg.jpg) no-repeat center;
+    background-size: cover;
+  }
+  .heading-block {
+    max-width: 410px;
+    margin-right: auto;
+    .title {
+      text-align: center;
+      text-transform: capitalize;
+      width: fit-content;
+      margin-bottom: 25px;
+    }
+    .desc {
+      text-align: center;
+    }
+    .button {
+      margin: 40px auto 0;
+      background-color: $yellow;
+      text-transform: capitalize;
+      letter-spacing: 0;
+      border-radius: 0;
+      padding: 10px 30px;
+      transition: all ease 0.5s;
+      &:hover {
+        background-color: $yellow-2;
+      }
+    }
+  }
+}
+// END PROMO
+
+// START RELATE
+#fhm-products-detail-relate {
+  padding: 95px 0 156px;
+  background-color: $black-2;
+  .heading-block {
+    .title {
+      font-size: 24px;
+      line-height: 29px;
+      color: $white;
+      text-transform: capitalize;
+    }
+  }
+  .relate-item {
+    margin-top: 45px;
+    .image {
+      background-color: $white-2;
+      margin-bottom: 20px;
+      img {
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+    .content {
+      .title {
+        font-size: 16px;
+        line-height: 20px;
+        color: $white;
+        font-family: $font-helv;
+        text-transform: uppercase;
+        margin-bottom: 12px;
+        display: block;
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+      .desc {
+        font-size: 16px;
+        line-height: 21px;
+        font-family: $font-helv-r;
+        margin-bottom: 12px;
+        color: $white;
+        max-width: 90%;
+      }
+      .info {
+        @include flex(space-between, center, 20px);
+        .price {
+          @include flex(unset, center, 8px);
+          .current {
+            font-size: 16px;
+            line-height: 21px;
+            color: $red;
+            font-family: $font-helv-m2;
+          }
+          .old {
+            color: $white;
+            font-family: $font-helv-r;
+            font-size: 12px;
+            line-height: 15.6px;
+            text-decoration-line: strikethrough;
+          }
+        }
+        .rating {
+          --percent: calc(var(--rating) / 5 * 100%);
+          &::before {
+            content: "★★★★★";
+            font-size: 18px;
+            background: linear-gradient(
+              90deg,
+              #f2f4f7 var(--percent),
+              $gray var(--percent)
+            );
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+          }
+        }
+      }
+    }
+  }
+}
+// END RELATE
+
+// START REPSONSIVE
+@include tablet {
+  #fhm-products-detail {
+    .detail-info {
+      .info-wrapper {
+        flex-direction: column-reverse;
+      }
+    }
+  }
+
+  #fhm-products-detail-promo {
+    .heading-block {
+      max-width: 100%;
+      .title {
+        width: 100%;
+        text-align: center;
+      }
+    }
+  }
+}
+
+// END REPSONSIVE
